@@ -3,21 +3,16 @@ package padroes.projeto.strategy;
 public class Main {
     public static void main(String[] args) {
 
-        AplicativoNavegacao app = new AplicativoNavegacao();
-        String origem  = "Centro";
-        String destino = "Aeroporto";
+        CalculadoraFrete app = new CalculadoraFrete();
         double distancia = 18.0;
 
-        // Estratégia 1: carro
+        // Estratégia 1: entrega padrão
         System.out.println("=== Opção 1 ===");
-        app.setEstrategia(new RotaDeCarro());
-        app.calcularRota(origem, destino, distancia);
+        app.setEstrategia(new FretePadrao());
+        app.calcularFrete(distancia);
 
         System.out.println();
 
-        // Configure a estratégia de rota de ônibus
-
-        //Configure a estratégia de rota a pé
-       
+        //TODO: continuar demonstração de uso do código
     }
 }
