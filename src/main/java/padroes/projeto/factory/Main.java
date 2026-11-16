@@ -1,25 +1,16 @@
 package padroes.projeto.factory;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        EsportesUIFactory adidasFactory = EsportesUIFactory.getFactory("adidas");
-        // Deve conter a opção Nike aqui
+        InterfaceFactory fabrica = InterfaceFactory.getFactory("claro");
 
-        // Fábrica dos produtos Nike aqui
+        Botao botao = fabrica.criarBotao();
+        System.out.println(botao.renderizar());
 
-        ProdutoUI tenisAdidas = adidasFactory.fabricarTenis();
-        ProdutoUI camisaAdidas = adidasFactory.fabricarCamisa();
+        CampoTexto campoTexto = fabrica.criarCampoTexto();
+        System.out.println(campoTexto.renderizar());
 
-        //
-        //
-        printDetalhes(tenisAdidas);
-        printDetalhes(camisaAdidas);
-
-    }
-
-    static void printDetalhes(ProdutoUI s){
-        System.out.println("Logo: " + s.getLogo());
-        System.out.println("Tamanho: " + s.getTamanho());
-    }
+        //TODO: continuar demonstração de uso do código
+     }
 }
