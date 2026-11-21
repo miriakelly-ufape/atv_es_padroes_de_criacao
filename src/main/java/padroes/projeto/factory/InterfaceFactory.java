@@ -8,6 +8,7 @@ public interface InterfaceFactory {
     static InterfaceFactory getFactory(String tema) {
         return switch (tema.toLowerCase()) {
             case "claro" -> new TemaClaroFactory();
+            case "escuro" -> new TemaEscuroFactory();
             default -> throw new IllegalArgumentException("Tema desconhecido: " + tema);
         };
     }
